@@ -1,17 +1,29 @@
-import * as React from "react"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@base-ui/components/ui/card"
-import { Button } from "@base-ui/components/ui/button"
-import { Label } from "@base-ui/components/ui/label"
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@base-ui/components/ui/card";
+import { Button } from "@base-ui/components/ui/button";
+import { Label } from "@base-ui/components/ui/label";
 
 interface UserCardProps {
-  name: string
-  email: string
-  role: string
-  onEdit?: () => void
-  onDelete?: () => void
+  name: string;
+  email: string;
+  role: string;
+  onEdit?: () => void;
+  onDelete?: () => void;
 }
 
-export function UserCard({ name, email, role, onEdit, onDelete }: UserCardProps) {
+export function UserCard({
+  name,
+  email,
+  role,
+  onEdit,
+  onDelete,
+}: UserCardProps) {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
@@ -37,5 +49,5 @@ export function UserCard({ name, email, role, onEdit, onDelete }: UserCardProps)
         </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }

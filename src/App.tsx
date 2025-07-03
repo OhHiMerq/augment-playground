@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import { Button } from '@base-ui/components/ui/button'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@base-ui/components/ui/card'
-import { Badge } from '@base-ui/components/ui/badge'
-import { Input } from '@base-ui/components/ui/input'
-import { Label } from '@base-ui/components/ui/label'
-import { UserCard } from '@base-ui/components/user-card'
-import { ThemeSelector } from '@base-ui/components/theme-selector'
+import { useState } from "react";
+import { Button } from "@base-ui/components/ui/button";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@base-ui/components/ui/card";
+import { Badge } from "@base-ui/components/ui/badge";
+import { Input } from "@base-ui/components/ui/input";
+import { Label } from "@base-ui/components/ui/label";
+import { UserCard } from "@/src/user-card";
+import { ThemeSelector } from "@/src/theme-selector";
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [email, setEmail] = useState('')
-  const [name, setName] = useState('')
+  const [count, setCount] = useState(0);
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
@@ -34,10 +40,14 @@ function App() {
             </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-4">
               shadcn/ui React
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"> Showcase</span>
+              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                {" "}
+                Showcase
+              </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              A comprehensive collection of beautiful, accessible, and customizable components built with Radix UI and Tailwind CSS.
+              A comprehensive collection of beautiful, accessible, and
+              customizable components built with Radix UI and Tailwind CSS.
             </p>
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               <Badge variant="default">React 18</Badge>
@@ -69,10 +79,18 @@ function App() {
                     <Button onClick={() => setCount(count + 1)} size="lg">
                       Increment
                     </Button>
-                    <Button variant="outline" onClick={() => setCount(count - 1)} size="lg">
+                    <Button
+                      variant="outline"
+                      onClick={() => setCount(count - 1)}
+                      size="lg"
+                    >
                       Decrement
                     </Button>
-                    <Button variant="destructive" onClick={() => setCount(0)} size="lg">
+                    <Button
+                      variant="destructive"
+                      onClick={() => setCount(0)}
+                      size="lg"
+                    >
                       Reset
                     </Button>
                   </div>
@@ -103,7 +121,13 @@ function App() {
 
                 {name && (
                   <div className="text-center p-4 bg-muted rounded-lg">
-                    <p className="text-sm text-muted-foreground">Hello, <span className="font-semibold text-foreground">{name}</span>! 👋</p>
+                    <p className="text-sm text-muted-foreground">
+                      Hello,{" "}
+                      <span className="font-semibold text-foreground">
+                        {name}
+                      </span>
+                      ! 👋
+                    </p>
                   </div>
                 )}
               </CardContent>
@@ -167,7 +191,8 @@ function App() {
               <CardHeader>
                 <CardTitle>Team Members</CardTitle>
                 <CardDescription>
-                  Composite components showcasing Card, Button, and Label integration
+                  Composite components showcasing Card, Button, and Label
+                  integration
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -176,22 +201,22 @@ function App() {
                     name="Sarah Chen"
                     email="sarah.chen@company.com"
                     role="Senior Designer"
-                    onEdit={() => alert('Edit user: Sarah Chen')}
-                    onDelete={() => alert('Delete user: Sarah Chen')}
+                    onEdit={() => alert("Edit user: Sarah Chen")}
+                    onDelete={() => alert("Delete user: Sarah Chen")}
                   />
                   <UserCard
                     name="Alex Rodriguez"
                     email="alex.rodriguez@company.com"
                     role="Full Stack Developer"
-                    onEdit={() => alert('Edit user: Alex Rodriguez')}
-                    onDelete={() => alert('Delete user: Alex Rodriguez')}
+                    onEdit={() => alert("Edit user: Alex Rodriguez")}
+                    onDelete={() => alert("Delete user: Alex Rodriguez")}
                   />
                   <UserCard
                     name="Maya Patel"
                     email="maya.patel@company.com"
                     role="Product Manager"
-                    onEdit={() => alert('Edit user: Maya Patel')}
-                    onDelete={() => alert('Delete user: Maya Patel')}
+                    onEdit={() => alert("Edit user: Maya Patel")}
+                    onDelete={() => alert("Delete user: Maya Patel")}
                   />
                 </div>
               </CardContent>
@@ -204,8 +229,18 @@ function App() {
               <Card className="border-2 border-primary/20">
                 <CardHeader>
                   <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
-                    <svg className="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <svg
+                      className="h-6 w-6 text-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
                     </svg>
                   </div>
                   <CardTitle>Lightning Fast</CardTitle>
@@ -218,8 +253,18 @@ function App() {
               <Card className="border-2 border-green-500/20">
                 <CardHeader>
                   <div className="h-12 w-12 rounded-lg bg-green-500/10 flex items-center justify-center mb-2">
-                    <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg
+                      className="h-6 w-6 text-green-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
                     </svg>
                   </div>
                   <CardTitle>Accessible</CardTitle>
@@ -232,8 +277,18 @@ function App() {
               <Card className="border-2 border-purple-500/20">
                 <CardHeader>
                   <div className="h-12 w-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-2">
-                    <svg className="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                    <svg
+                      className="h-6 w-6 text-purple-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+                      />
                     </svg>
                   </div>
                   <CardTitle>Customizable</CardTitle>
@@ -254,7 +309,7 @@ function App() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
