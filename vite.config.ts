@@ -11,4 +11,13 @@ export default defineConfig({
       "@base-ui": path.resolve(__dirname, "./src/base-ui"),
     },
   },
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    allowedHosts: [
+      'chansey.lonebots.com',
+      'localhost',
+      '127.0.0.1'
+    ]
+  }
 })
