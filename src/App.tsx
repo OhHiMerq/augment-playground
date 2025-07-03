@@ -5,7 +5,7 @@ import { Badge } from '@base-ui/components/ui/badge'
 import { Input } from '@base-ui/components/ui/input'
 import { Label } from '@base-ui/components/ui/label'
 import { UserCard } from '@base-ui/components/user-card'
-import { ThemeToggle } from '@base-ui/components/theme-toggle'
+import { ThemeSelector } from '@base-ui/components/theme-selector'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,7 +21,7 @@ function App() {
             <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-primary/60"></div>
             <h1 className="text-xl font-bold">shadcn/ui Showcase</h1>
           </div>
-          <ThemeToggle />
+          <Badge variant="outline">Multi-Theme</Badge>
         </div>
       </header>
 
@@ -45,6 +45,11 @@ function App() {
               <Badge variant="outline">Tailwind CSS</Badge>
               <Badge variant="destructive">Radix UI</Badge>
             </div>
+          </section>
+
+          {/* Theme Selector Section */}
+          <section className="mb-12">
+            <ThemeSelector />
           </section>
 
           {/* Interactive Demo Section */}
